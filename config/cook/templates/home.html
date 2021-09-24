@@ -1,0 +1,16 @@
+{% for i in recipe %}
+
+<p> 제목 : {{i.title}} </p>
+
+<p> 사진 : <img src="{{i.recipe.url}}">  </p>
+
+<p> 재료 : {{i.ingredients_list}} </p>
+
+<button><a href ="{% url 'detail' i.id %}"> 상세보기</a> </button>
+
+{% endfor %}
+
+
+
+
+-------------

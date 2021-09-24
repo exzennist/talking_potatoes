@@ -1,0 +1,28 @@
+<h1> Create
+    레시피 만드는 페이지 
+    create.html
+</h1>
+<form action = "{% url 'create' %}" method = "POST">
+    {% csrf_token %}
+
+    <p>요리 제목 title : </p>
+    <input type = 'text' id = 'title' name = 'title'>
+
+    <p>요리 사진 photo :  </p>
+    <input type = 'file' id = 'photo' name = 'photo'>
+
+    <p>재료 작성 ingredients : </p> 
+    <input type = 'text' id = 'ingredients' name = 'ingredients', placeholder="재료를 입력해주세요">
+
+    <p>재료 개수 작성 ingredients_count : </p>
+    <input type = 'text' id = 'ingredients_count', name = 'ingredients_count', placeholder="개수를 입력해주세요"> 
+
+    <p>조립 방법 작성 method : </p>
+    <input type = 'text' id = 'method', name = 'method', placeholder="조리 방법을 입력해주세요">
+
+    <div>
+        <button type = 'submit'> 등록하기 </button>
+    </div>
+
+</form>
+-------------

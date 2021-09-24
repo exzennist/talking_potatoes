@@ -1,0 +1,29 @@
+<!-- # Detail 각 레시피 화면 
+def detail(request, id) : 
+    recipe = get_object_or_404(Recipe, pk = id)
+    content = Content.objects.filter(title = recipe)
+    context ={
+        'recipe' : recipe, 
+        'content' : content,
+    }
+    return render(request, 'detail.html', context) -->
+
+
+<h1>detail 각 레시피 화면 
+    detail.html
+</h1>
+
+<p>제목 : {{recipe.title}}</p>
+<p>사진 : <img scr ='url'> </p>
+<p>재료 리스트 : {{recipe.ingredients_list}}</p>
+
+<p> 각 재료와 방법 소개 </p>
+{% for content in content %}
+
+<p> 재료 : {{content.ingredients}} </p>
+<p> 재료 개수 : {{content.ingredients_count}} </p>
+<p> 조리 방법 : {{content.method}} </p>
+
+{% endfor %}
+
+-------------
